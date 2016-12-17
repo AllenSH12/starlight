@@ -1,13 +1,3 @@
-var config = require('./conf');
-var Entity = require('./entity');
+var App = require('./app');
 
-const entity = (name, properties) => {
-  return new Entity(name, properties);
-}
-
-module.exports = {
-  app: () => ({
-    config,
-    entity
-  })
-}
+module.exports = App;
