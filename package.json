@@ -13,5 +13,8 @@
   "devDependencies": {
     "mocha": "3.2.0",
     "should": "11.1.2"
+  },
+  "dependencies": {
+    "nconf": "0.8.4"
   }
 }

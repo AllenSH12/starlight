@@ -1,5 +1,9 @@
+var conf = require('./conf');
+
 module.exports = {
   app: function() {
-    return {};
+    return {
+      config: conf
+    };
   }
 }

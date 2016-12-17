@@ -9,4 +9,8 @@ describe('App', function() {
   it('should return an app object', function() {
     (starlight.app()).should.be.a.Object();
   });
+
+  it('should expose a config object', function() {
+    (starlight.app().config).should.be.a.Object();
+  });
 });
