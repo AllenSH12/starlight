@@ -1,16 +1,13 @@
 var should = require('should');
 var starlight = require('.././src');
+var testConfig = require('./conf');
 
 describe('App', function() {
-  it('should export an app method that returns an app object', function() {
-    starlight.app.should.exist;
-  });
+  const app = starlight.app();
 
   it('should return an app object', function() {
-    (starlight.app()).should.be.a.Object();
+    (app).should.be.a.Object();
   });
 
-  it('should expose a config object', function() {
-    (starlight.app().config).should.be.a.Object();
-  });
+  describe('Config', testConfig(app));
 });
