@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/index.js",
-    "dev": "mocha test/index.js -w"
+    "test": "mocha test/index.js --compilers js:babel-register",
+    "dev": "mocha test/index.js -w --compilers js:babel-register"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel-register": "6.18.0",
     "mocha": "3.2.0",
     "should": "11.1.2"
   },
