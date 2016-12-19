@@ -26,12 +26,15 @@ module.exports = function() {
       });
     });
 
-    it('should reject improperly formatted instances', function() {
+    it('should reject improperly formatted instances', function(done) {
       var BAD_FOO = { firstName: 0 };
 
       var Foo = new Entity(TEST_ENTITY.name, TEST_ENTITY.properties);
 
-      return Foo.create(BAD_FOO).catch.should.be.called;
+      Foo.create(BAD_FOO)
+      .catch(() => {
+        done();
+      });
     });
 
     it('should remove properties not found in the schema definition', function() {
