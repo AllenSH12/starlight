@@ -41,8 +41,30 @@ module.exports = function() {
 
       return Foo.create(OK_FOO)
       .then(function(result) {
-        result.should.have.property('firstName');
         result.should.not.have.property('lastName');
+      });
+    });
+
+    it('should allow over-riding lifecycle methods', function() {
+      var GOOD_FOO = { firstName: "Homer" };
+
+      class Foo extends Entity {
+        constructor() {
+          super(TEST_ENTITY.name, TEST_ENTITY.properties);
+        }
+
+        onBeforeCreate(entity) {
+          entity.firstName = entity.firstName.toUpperCase();
+
+          return super.onBeforeCreate(entity);
+        }
+      }
+
+      var foo = new Foo();
+
+      return foo.create(GOOD_FOO)
+      .then(function(result) {
+        result.should.have.property('firstName', 'HOMER');
       });
     });
   }

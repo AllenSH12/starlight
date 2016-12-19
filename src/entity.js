@@ -15,7 +15,7 @@ class Entity {
 
   onBeforeCreate(entity) {
     const expectedKeys = Object.keys(this.schema.properties);
-    const cleanEntity = _.pick(entity, expectedKeys)
+    const cleanEntity = _.pick(entity, expectedKeys);
 
     return Promise.resolve(cleanEntity);
   }
