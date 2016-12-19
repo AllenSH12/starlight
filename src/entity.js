@@ -29,8 +29,12 @@ class Entity {
         throw new Error('ValidationError', validationResult.errors);
       }
 
-      return entity;
+      return this.onAfterCreate(entity);
     });
+  }
+
+  onAfterCreate(entity) {
+    return Promise.resolve(entity);
   }
 }
 
