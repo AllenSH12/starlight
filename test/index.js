@@ -7,5 +7,5 @@ describe('App', function() {
   const app = new Starlight();
 
   describe('Config', testConfig(app));
-  describe('Entity', testEntity(app));
+  describe('Entity', testEntity());
 });
