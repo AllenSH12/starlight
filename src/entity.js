@@ -1,3 +1,4 @@
+var _ = require('lodash');
 var Validator = require('jsonschema').Validator;
 
 class Entity {
@@ -13,7 +14,10 @@ class Entity {
   }
 
   onBeforeCreate(entity) {
-    return Promise.resolve(entity);
+    const expectedKeys = Object.keys(this.schema.properties);
+    const cleanEntity = _.pick(entity, expectedKeys)
+
+    return Promise.resolve(cleanEntity);
   }
 
   create(entity) {
