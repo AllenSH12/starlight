@@ -152,6 +152,11 @@
       "from": "cliui@>=3.0.3 <4.0.0",
       "resolved": "https://registry.npmjs.org/cliui/-/cliui-3.2.0.tgz"
     },
+    "clone": {
+      "version": "1.0.2",
+      "from": "clone@>=1.0.2 <2.0.0",
+      "resolved": "https://registry.npmjs.org/clone/-/clone-1.0.2.tgz"
+    },
     "code-point-at": {
       "version": "1.1.0",
       "from": "code-point-at@>=1.0.0 <2.0.0",
@@ -235,6 +240,11 @@
       "from": "decamelize@>=1.1.1 <2.0.0",
       "resolved": "https://registry.npmjs.org/decamelize/-/decamelize-1.2.0.tgz"
     },
+    "defaults": {
+      "version": "1.0.3",
+      "from": "defaults@>=1.0.3 <2.0.0",
+      "resolved": "https://registry.npmjs.org/defaults/-/defaults-1.0.3.tgz"
+    },
     "delayed-stream": {
       "version": "1.0.0",
       "from": "delayed-stream@>=1.0.0 <1.1.0",
@@ -299,6 +309,11 @@
       "version": "4.14.0",
       "from": "express@latest",
       "resolved": "https://registry.npmjs.org/express/-/express-4.14.0.tgz"
+    },
+    "express-rate-limit": {
+      "version": "2.6.0",
+      "from": "express-rate-limit@latest",
+      "resolved": "https://registry.npmjs.org/express-rate-limit/-/express-rate-limit-2.6.0.tgz"
     },
     "extend": {
       "version": "3.0.0",
