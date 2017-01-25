@@ -14,9 +14,12 @@ module.exports = function(app) {
       request(app.router).get('/').expect(200).end(() => done());
     });
 
-    it.only('should be rate-limited', function(done) {
-      const requests = _.range(100).map(() => {
-        return request(app.router).get('/').expect(200);
+    it('should be rate-limited', function(done) {
+      const requests = _.range(100).map((i) => {
+        const MAX_CONNECTIONS = 9; // Really 10 but we already used one of the requests in the prior test
+        const expectedCode = (i < MAX_CONNECTIONS) ? 200 : 429;
+
+        return request(app.router).get('/').expect(expectedCode);
       });
 
       Promise.all(requests).then(() => done())

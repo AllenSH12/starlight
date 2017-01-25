@@ -10,18 +10,17 @@ class App {
     this.bottle = new Bottle();
     this.router = express();
 
-    this.router.get('/', function(req, res) {
-      console.log('HIT HIT HIT');
-      res.send('hello world');
-    });
-
     var limiter = new RateLimit({
-      windowMs: 10,
-      max: 5,
+      windowMs: 15 * 60 * 1000,
+      max: 10,
       delayMs: 0
     });
 
     this.router.use(limiter);
+
+    this.router.get('/', function(req, res) {
+      res.send('hello world');
+    });
   }
 }
 
